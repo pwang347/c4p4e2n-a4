@@ -13,6 +13,10 @@ def num_to_bytes(n):
     return n_bytes
 
 def mine_coin(hash_of_preceding_coin, id_of_miner, offset=0):
+    """
+    Technically Python isn't ideal for performance intensive stuff like this,
+    but proof of work here isn't too hard to compute.
+    """
     coin_blob_ctr = offset
     while True:
         m = hashlib.md5()
